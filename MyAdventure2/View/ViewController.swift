@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var optionTwo: UIButton!
     
+    @IBOutlet weak var levelLabel: UILabel!
+    
+    
     var logic = Logic()
     
     override func viewDidLoad() {
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
     }
     
     @objc func updateUI() {
+        levelLabel.text = "Level: \(logic.getIndex())"
         questionLabel.text = logic.getNextQuestion()
         background.image = UIImage(named: String(logic.getImageName()))
         optionOne.setTitle(logic.getChoiceOne(), for: .normal)

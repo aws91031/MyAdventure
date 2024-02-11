@@ -22,22 +22,24 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="myP-bo-nrM">
                                 <rect key="frame" x="30" y="89" width="333" height="699"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kme-HK-jL4">
-                                        <rect key="frame" x="79.000000000000014" y="0.0" width="175.33333333333337" height="259"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rOA-XA-8AA">
+                                        <rect key="frame" x="30" y="0.0" width="273" height="259"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AdC-IR-ZK7">
-                                                <rect key="frame" x="22.666666666666657" y="64.333333333333343" width="130" height="130"/>
+                                                <rect key="frame" x="0.0" y="64.333333333333343" width="130" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="owy-Ue-7GI"/>
                                                     <constraint firstAttribute="height" constant="130" id="pXE-b1-XLK"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzV-J5-8Zq">
+                                                <rect key="frame" x="130" y="115.66666666666667" width="143" height="27.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="AdC-IR-ZK7" firstAttribute="centerX" secondItem="Kme-HK-jL4" secondAttribute="centerX" id="0xt-wi-Tu7"/>
-                                            <constraint firstItem="AdC-IR-ZK7" firstAttribute="centerY" secondItem="Kme-HK-jL4" secondAttribute="centerY" id="5Bg-pv-wwa"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A scary monster is chasing you! Which way do you turn?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBc-ag-Il5">
                                         <rect key="frame" x="40" y="259" width="253" height="258.66666666666674"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -81,10 +83,12 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="5QJ-eA-M1m" secondAttribute="trailing" constant="30" id="0F9-DK-DPb"/>
                                     <constraint firstItem="SBc-ag-Il5" firstAttribute="leading" secondItem="myP-bo-nrM" secondAttribute="leading" constant="40" id="1nC-R4-Bv7"/>
-                                    <constraint firstItem="5QJ-eA-M1m" firstAttribute="height" secondItem="Kme-HK-jL4" secondAttribute="height" multiplier="0.7" id="A18-ca-PDr"/>
+                                    <constraint firstItem="SBc-ag-Il5" firstAttribute="height" secondItem="rOA-XA-8AA" secondAttribute="height" id="AEs-Me-BsZ"/>
+                                    <constraint firstItem="rOA-XA-8AA" firstAttribute="leading" secondItem="myP-bo-nrM" secondAttribute="leading" constant="30" id="JMU-dp-jBL"/>
                                     <constraint firstAttribute="trailing" secondItem="SBc-ag-Il5" secondAttribute="trailing" constant="40" id="M1f-cf-UPN"/>
+                                    <constraint firstAttribute="trailing" secondItem="rOA-XA-8AA" secondAttribute="trailing" constant="30" id="S0r-62-ymy"/>
                                     <constraint firstItem="5QJ-eA-M1m" firstAttribute="leading" secondItem="myP-bo-nrM" secondAttribute="leading" constant="30" id="dhf-qh-cvn"/>
-                                    <constraint firstItem="SBc-ag-Il5" firstAttribute="height" secondItem="Kme-HK-jL4" secondAttribute="height" id="xsc-z5-TBX"/>
+                                    <constraint firstItem="5QJ-eA-M1m" firstAttribute="height" secondItem="rOA-XA-8AA" secondAttribute="height" multiplier="0.7" id="gaW-zS-abr"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -103,6 +107,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="cuP-aX-OxN" id="EuR-Rd-VR9"/>
+                        <outlet property="levelLabel" destination="LzV-J5-8Zq" id="H6A-mE-u5a"/>
                         <outlet property="optionOne" destination="1o0-aS-t7n" id="467-Rn-FE8"/>
                         <outlet property="optionTwo" destination="hE8-0l-fwU" id="BuO-oy-qHl"/>
                         <outlet property="questionLabel" destination="SBc-ag-Il5" id="Qb5-oK-qKX"/>

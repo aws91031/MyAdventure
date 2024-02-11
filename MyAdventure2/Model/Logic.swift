@@ -64,6 +64,10 @@ struct Logic {
     func getImageName() -> Int {
         return questionIndex + 1
     }
+    
+    func getIndex() -> Int {
+        return questionIndex + 1
+    }
 }
 
 
